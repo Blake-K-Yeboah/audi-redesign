@@ -1,0 +1,93 @@
+.typography {
+    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.5em;
+
+    &.light {
+        color: #eee;
+    }
+
+    &.lighter {
+        color: #fff;
+    };
+
+    &.centred {
+        text-align: center;
+        margin: 0 auto;
+
+        @include medium {
+            margin: 0;
+        }
+    }
+    &.large {
+        font-size: 2.75rem;
+        padding: .5em 0;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+
+        @include veryLarge {
+            font-size: 2rem;
+        }
+
+        @include large {
+            font-size: 1.5rem;
+        }
+
+        @include medium {
+            text-align:center;
+            font-size: 1.85rem;
+            padding: .75em 0;
+        }
+
+        @include verySmallHeight {
+            font-size: 1.65rem;
+        }
+    }
+
+    &.small {
+        font-size: 1.25rem;
+        width:75%;
+        letter-spacing: 0.025em;
+
+        @include veryLarge {
+            font-size: 1rem;
+        }
+
+        @include large {
+            font-size: .8rem;
+        }
+
+        @include medium {
+            text-align:center;
+            font-size: 1rem;
+            width:60%;
+            position:relative;
+            left:50%;
+            transform:translateX(-50%);
+            padding-bottom: 1em;
+        }
+
+        @include verySmallHeight {
+            font-size: .85rem;
+        }
+    }
+
+}
+
+.text.right {
+    .typography {
+        text-align:right;
+
+        @include medium {
+            text-align:center;
+        }
+        &.small {
+            margin-left: 25%;
+
+            @include medium {
+                margin: 0;
+            }
+        }
+    }
+}

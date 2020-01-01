@@ -1,0 +1,240 @@
+nav {
+    height: 175px;
+    width:100%;
+    padding: 5em 5%;
+    position:fixed;
+    z-index:3;
+    @include transition2();
+    
+    .menu-icon-container {
+        position:absolute;
+        left:7.5vw;
+    }
+
+    .menu-icon {
+        width: 42.5px;
+        height: 37.5px;
+        position: relative;
+        @include transition2();
+        cursor: pointer;
+        display:inline-block;
+        
+        span {
+            display: block;
+            position: absolute;
+            height: 2.5px;
+            width: 100%;
+            background: rgba(255,255,255,0.8);
+            border-radius: 9px;
+            opacity: 1;
+            left: 0;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            @include transition();
+        }
+
+        span:nth-child(1) {
+            top: 0px;
+        }
+         
+        span:nth-child(2) {
+            top: 15px;
+            width: 80%;
+        }
+          
+       span:nth-child(3) {
+            top: 30px;
+       }
+          
+        &.open { 
+
+            span:nth-child(1) {
+                top: 18px;
+                -webkit-transform: rotate(135deg);
+                -moz-transform: rotate(135deg);
+                -o-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+
+            span:nth-child(2) {
+                opacity: 0;
+                left: -60px;
+            }
+
+            span:nth-child(3) {
+                top: 18px;
+                -webkit-transform: rotate(-135deg);
+                -moz-transform: rotate(-135deg);
+                -o-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+            }
+        }
+    }
+
+    .logo {
+        width: 200px;
+        position:absolute;
+        left: 50%;
+        top: 35%;
+        transform:translateX(-50%);
+
+        @include medium {
+            left: calc(100% - (200px + 7.5%));
+            transform: none;
+        }
+
+        @include small {
+            width: 150px;
+            left: calc(100% - (150px + 7.5%));
+            top: 40%;
+        }
+    }
+
+    .find-a-dealer {
+        position:absolute;
+        right:7.5vw;
+        width: 200px;
+        height: 40px;
+        font-size: .75rem;
+
+        @include medium {
+            display:none;
+        }
+    }
+
+    &.contract {
+        background: $darkGrey;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
+        height: 75px;
+
+        .menu-icon-container {
+            top:50%;
+            transform:translateY(-50%);
+        }
+
+        .logo {
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+            @include medium {
+                left: calc(100% - (200px + 7.5%));
+                transform: translateY(-50%);
+            }
+
+            @include small {
+                left: calc(100% - (150px + 7.5%));
+            }
+        }
+
+        .find-a-dealer {
+            top: 50%;
+            transform:translateY(-50%);
+        }
+    }
+}
+
+.sidenav {
+    width: 25vw;
+    height: 100vh;
+    position:fixed;
+    left:-25vw;
+    top:0;
+    background: rgba(0,0,0,0.95);
+    z-index:2;
+    @include transition2();
+    overflow-x: hidden;
+
+    @include veryLarge {
+        width: 30vw;
+        left: -30vw;
+    }
+
+    @include large {
+        width: 37.5vw;
+        left: -37.5vw;
+    }
+
+    @include medium {
+        width: 100vw;
+        left: -100vw;
+    }
+    &.shown {
+        left: 0;
+    }
+
+    .back {
+        color: #fff;
+        font-size: .75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight:lighter;
+        cursor: pointer;
+        position: absolute;
+        left: 5vw;
+        top: 27.5vh;
+        opacity:0;
+        @include transition();
+
+        &.shown {
+            opacity: 1;
+        }
+    }
+    .list {
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%, -50%);
+        @include transition2();
+    
+        &.hide {
+            left:-50%;
+        }
+
+
+        .item {
+            padding: 1.5em 0;
+            
+            .link {
+                color: #fff;
+                text-decoration:none;
+                text-align:center;
+                position:absolute;
+                left:50%;
+                transform: translateX(-50%);
+                font-size: .75rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                font-weight:lighter;
+                cursor: pointer;
+                padding-bottom: 5px;
+                height: 25px;
+                line-height: 1.5em;
+
+                &:hover, &.active {
+                    border-bottom: 1px solid #fff;
+                }
+
+                .icon {
+                   position:relative;
+                   left:42.5px;
+                   top: -16px;
+                   font-size: 1rem;
+                }
+            }
+        }
+
+        &:last-of-type {
+            left: 150%;
+
+            .link {
+                height: 40px;
+            }
+        }
+
+        &.shown {
+            left: 50%;
+        }
+    }
+}

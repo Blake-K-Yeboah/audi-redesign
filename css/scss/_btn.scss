@@ -1,0 +1,50 @@
+.btn {
+    width:200px;
+    height: 40px;
+    border-radius: 20px;
+    background: transparent;
+    border: 1px solid white;
+    color: #fff;
+    font-size: .75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight:lighter;
+    cursor: pointer;
+    @include transition();
+
+    @include veryLarge {
+        width: 150px;
+        height: 35px;
+        font-size: .6rem;
+    }
+
+    @include large {
+        width: 100px;
+        height: 30px;
+        font-size: .5rem;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.85);
+    }
+    &:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    &.btn-primary {
+        background: $primaryGradient;
+        border: 0;
+        border-radius: 5px;
+
+        &:hover {
+            background: $lighterGradient;
+            color: #fff;
+        }
+    }
+
+    &.large {
+        width: 100%;
+    }
+}

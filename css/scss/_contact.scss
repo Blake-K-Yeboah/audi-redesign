@@ -1,0 +1,104 @@
+.contact-page-content {
+    width: 55%;
+    margin: 0 auto 4em auto;
+    background: rgba(0,0,0,0.6);
+    height: 70vh;
+    position:relative;
+
+    @include medium {
+        &:first-of-type {
+            height: 80vh;
+        }
+
+        &:last-of-type {
+            height:50vh;
+        }
+    }
+
+    @include small {
+        width: 85%;
+    }
+
+    @include verySmall {
+        &:first-of-type {
+            height: 85vh;
+        }
+
+        &:last-of-type {
+            height:55vh;
+        }
+    }
+    .divider {
+        margin: 0 auto 2em auto;
+
+        @include verySmall {
+            width: 75px;
+        }
+    }
+
+    .typography.small {
+        margin-bottom: 2em;
+    }
+
+    .contact-img {
+        width: 60%;
+        position:relative;
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+    .contact-form {
+        width: 70%;
+        margin: 0 auto;
+        position:relative;
+
+        input, textarea {
+            height: 40px;
+            background: transparent;
+            border:0;
+            border-bottom: 2px solid lighten($darkGrey, 35%);
+            width: 100%;
+            color: lighten($darkGrey, 50%);
+            font-size:1.25rem;
+            font-family: 'Raleway', sans-serif;
+            @include transition();
+            font-weight: normal;
+
+            &::placeholder {
+                color: lighten($darkGrey, 50%);
+                opacity: 1;
+                font-size:1.25rem;
+                font-family: 'Raleway', sans-serif;
+            }
+
+            &.message {
+                height: 120px;
+            }
+
+            @include medium {
+                &.name:first-of-type {
+                    margin-bottom: 30px;
+                }
+            }
+            &:focus {
+                outline: none;
+                border-bottom-color: $primaryColor;
+                color: $primaryColor;
+
+                &::placeholder {
+                    color: $primaryColor;
+                }
+            }
+        }
+
+        .form-grid {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2em;
+
+            @include medium {
+                display: block;
+            }
+        }
+    }
+}

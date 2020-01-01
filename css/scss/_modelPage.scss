@@ -1,0 +1,64 @@
+.model-content {
+    position:relative;
+    top: 175px;
+    margin-bottom: 40vh;
+
+    .divider {
+        margin: 0 auto;
+    }
+
+    .model-list {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4em;
+        width:75%;
+        margin: 4em auto;
+        list-style: none;
+        
+        @include large {
+            gap: 2em;
+        }
+
+        @include medium {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include small {
+            display: block;
+        }
+        .model-box {
+            background: rgba(0,0,0,0.375);
+            width:100%;
+            padding: 2em;
+
+            @include small {
+                margin: 4em 0;
+            }
+            .model-img {
+                width: 80%;
+                position: relative;
+                left:50%;
+                transform: translateX(-50%);
+            }
+
+            .model-title {
+                font-weight: lighter;
+                font-size: 1.8rem;
+                color: #eee;
+                letter-spacing: 0.05em;
+                text-align:center;
+                margin-bottom: 1em;
+
+                @include veryLarge {
+                    font-size: 1.25rem;
+                }
+            }
+
+            .explore-btn {
+                position:relative;
+                left:50%;
+                transform:translateX(-50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:100&display=swap');
+
+$primaryColor: rgba(204, 0, 51, 0.787);
+$lightPrimaryColor: lighten($primaryColor, 15%);
+
+$lightGrey: #eee;
+$darkGrey:  #111;
+
+$primaryGradient: linear-gradient(135deg, $primaryColor 0%, $lightPrimaryColor 100%);
+$lighterGradient: linear-gradient(135deg, $lightPrimaryColor 0%, lighten(#EE2255, 10%) 100%);
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background: $darkGrey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: darken($lightGrey, 20%);
+}
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+    // Firefox Scrollbar
+    scrollbar-color: darken($lightGrey, 20%) $darkGrey;
+    scrollbar-width: thin;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-image: url('../img/bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+
+    &.sedan-bg {
+        background-image: url('../img/sedan-bg.jpg');
+    }
+
+    &.about-bg {
+        background-image: url('../img/about-bg.jpg');
+    }
+
+    &.contact-bg {
+        background-image: url('../img/contact-bg.jpg');
+    }
+}
+
+@mixin transition {
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+@mixin transition2 {
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+@mixin transition3 {
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
+}

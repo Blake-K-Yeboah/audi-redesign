@@ -1,0 +1,259 @@
+.footer {
+    background: $darkGrey;
+    height: 55vh;
+    padding: 4em 7.5vw;
+    position:relative;
+    font-family: "Raleway", sans-serif;
+    
+    @include large {
+        height: calc(100vh - 150px);
+    }
+
+    @include ipad {
+        height: calc(100vh - 100px);
+    }
+
+    @include medium {
+        height: 125vh;
+    }
+
+    @include small {
+        height: 175vh;
+    }
+
+    @include verySmall {
+        height: 180vh;
+    }
+
+    @include verySmallHeight {
+        height: 210vh;
+    }
+
+    .footer-text {
+        color: $lightGrey;
+        padding: 3em 0 0 0;
+        font-size: .9rem;
+
+        @include ipad {
+            padding-top: 4em;
+        }
+
+        @include medium {
+            padding: 0;
+            position:absolute;
+            bottom: 3em;
+            left:50%;
+            transform:translateX(-50%);
+            text-align:center;
+        }
+    }
+
+    .footer-grid {
+        display:grid;
+        grid-template-columns: 2.5fr 1fr;
+        column-gap: 2em;
+        height: 90%;
+
+        @include veryLarge {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        @include medium {
+            display:block;
+        }
+    }
+
+    .link-section {
+        height: 100%;
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 1em;
+
+        @include large {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include medium {
+            position:relative;
+            top: 47.5vh;
+            height: calc(100% - 45vh);
+            width: 75%;
+            left:50%;
+            transform:translateX(-50%);
+        }
+
+        @include small {
+            display: block;
+            top: 43.5vh;
+        }
+
+        .link-list {
+            list-style: none;
+
+            @include medium {
+                &:nth-child(2n) {
+                    text-align:right;
+                }
+            }
+
+            @include small {
+                text-align:center;
+                margin: 3em 0;
+
+                &:nth-child(2n) {
+                    text-align:center;
+                }
+            }
+
+            @include smallHeight {
+                margin: 2em 0;
+            }
+
+            .list-heading {
+                font-weight: 300;
+                letter-spacing: 0.025em;
+                padding: 0 0 10px 0;
+                color: lighten($lightGrey, 5%);
+                font-size: 1.2rem;
+
+                @include verySmallHeight {
+                    font-size: 1rem;
+                }
+            }
+
+            .link-item {
+                padding: 5px 0px;
+
+                .link {
+                    text-decoration: none;
+                    color: darken($lightGrey, 5%);
+                    font-size: .9rem;
+                    @include transition();
+
+                    &:hover {
+                        color: lighten($primaryColor, 10%);
+                    }
+
+                    @include verySmallHeight {
+                        font-size: .75rem;
+                        
+                    }
+                }
+            }
+
+        }
+    }
+
+    .contact-info {
+        width:calc(.4 * (100% - 15vw));
+        height: 55vh;
+        padding: 4em;
+        color: lighten($lightGrey, 5%);
+        position: absolute;
+        right:0;
+        top: 0;
+        background: #151515; 
+        
+        @include large {
+            height: calc(100vh - 150px);
+        }
+
+        @include ipad {
+            height: calc(100vh - 100px);
+        }
+
+        @include medium {
+            width: 100%;
+            right: 50%;
+            transform:translateX(50%);
+            height: 47.5vh;
+            text-align: center;
+        }
+
+        @include verySmallHeight {
+            height: 50vh;
+            padding: 2em 4em;
+        }
+
+        .title {
+            font-weight: 100;
+            letter-spacing: 0.025em;
+            color: lighten($lightGrey, 5%);
+            font-size: 1.2rem;
+            padding-bottom: .5em;
+
+            @include ipad {
+                padding-top: 1.25em;
+            }
+
+            @include medium {
+                padding-bottom: 1em;
+            }
+
+            @include verySmallHeight {
+                font-size: 1rem;
+            }
+        }
+
+        .contact-section {
+            padding: 5px 5px 5px 0;
+
+            &:not(:first-of-type) {
+                padding-top: 1em;
+            }
+
+            &:last-of-type {
+                padding-bottom: 2em;
+            }
+
+            .sub-title {
+                font-weight: 100;
+                color: $lightGrey;
+                font-size: 1.05rem;
+                padding-bottom: .25em;
+
+                @include verySmallHeight {
+                    font-size: .9rem;
+                }
+            }
+
+            .contact-text {
+                text-decoration: none;
+                color: darken($lightGrey, 5%);
+                font-size: .9rem;
+                font-weight: 100;
+
+                @include verySmallHeight {
+                    font-size: .75rem;
+                }
+            }
+        }
+
+        .social-icon-list {
+            list-style: none;
+            display: flex;
+
+            @include medium {
+                justify-content: center;
+            }
+
+            .icon-item {
+                margin: 0 .75em;
+
+                &:first-of-type {
+                    margin: 0 .75em 0 0;
+                }
+
+                .icon {
+                    color: darken($lightGrey, 40%);
+                    text-decoration: none;
+                    @include transition();
+
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}

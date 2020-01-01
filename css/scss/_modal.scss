@@ -1,0 +1,112 @@
+.car-modal {
+    background: rgba(0,0,0,0.9);
+    height: 55vh;
+    width: 70vw;
+    z-index: 3;
+    position:fixed;
+    top: 50%;
+    left:-50%;
+    transform:translate(-50%, -50%);
+    opacity: 0;
+    @include transition3();
+
+    @include medium {
+        height: 75vh;
+        top: calc(50% + 75px);
+    }
+
+    @include small {
+        height: 80vh;
+    }
+
+    &.shown {
+        left: 50%;
+        opacity: 1;
+    }
+
+    
+    .close-icon {
+        position:absolute;
+        right: 2em;
+        top: 2em;
+        color: #fff;
+        cursor: pointer;
+        z-index:2;
+        transition:.2s ease-in-out;
+
+        &:hover {
+            color: #f00;
+        }
+
+        @include smallHeight {
+            right: 1em;
+            top:1em;
+        }
+    }
+
+    .grid {
+        width:100%;
+        height: 90%;
+        position:relative;
+        top: 10%;
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 2fr 1fr;
+
+        @include medium {
+            display:block;
+        }
+
+        @include smallHeight {
+            top: 5%;
+        }
+        .divider {
+            margin: 0 0 2em 0;
+
+            @include medium {
+                margin: 0 auto 2em auto;
+            }
+        }
+        .text-content {
+            width:100%;
+            height: 100%;
+            padding-left: 4em;
+
+            @include medium {
+                padding: 0;
+            }
+
+            .view-car {
+                position:relative;
+
+                @include medium {
+                    left:50%;
+                    transform:translateX(-50%);
+                }
+            }
+        }
+
+        .car-img-content {
+            width:100%;
+
+            @include small {
+                display: none;
+            }
+            .car-img {
+                width:100%;
+                position:relative;
+                right: 5em;
+                top: 47.5%;
+                transform:translateY(-50%);
+
+                @include medium {
+                    position:absolute;
+                    width:50%;
+                    top: calc(100% - 200px);
+                    left:50%;
+                    transform: translateX(-50%);
+                }
+            }
+        }
+    }
+}

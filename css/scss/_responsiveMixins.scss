@@ -1,0 +1,54 @@
+// Responsive Mixins
+@mixin smallHeight {
+    @media screen and (max-height: 820px) {
+        @content;
+    }
+}
+
+@mixin verySmallHeight {
+    @media screen and (max-height: 732px) {
+        @content;
+    }
+}
+
+@mixin superSmallHeight {
+    @media screen and (max-height: 585px) {
+        @content;
+    }
+}
+
+@mixin veryLarge {
+    @media screen and (max-width:1386px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and (max-width: 1052px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (max-width: 802px) {
+        @content;
+    }
+}
+
+@mixin small {
+    @media screen and (max-width: 620px) {
+        @content;
+    }
+}
+
+@mixin verySmall {
+    @media screen and (max-width: 415px) {
+        @content;
+    }
+}
+
+@mixin ipad {
+    @media (max-height:768px) and (max-width: 1024px) {
+        @content;
+    }
+}

@@ -1,0 +1,61 @@
+.content {
+    width: 85vw;
+    height: 30vh;
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30vh;
+    
+    @include medium {
+        display: block;
+        height: 80vh;
+        margin: 10vh 0 5vh 0;
+    }
+
+    .content-img {
+        position:relative;
+        width:90%;
+
+        @include medium {
+            position: absolute;
+            bottom: 10%;
+            left: 48%;
+            transform:translateX(-50%);
+            width: 70%;
+        }
+
+        &.special {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            width:90%;
+
+            @include medium {
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%) scaleX(-1);
+            }
+        }
+    }
+
+    .text .btn {
+        margin-top: 2em;
+
+        @include medium {
+            position:absolute;
+            left:50%;
+            transform:translateX(-50%);
+        }
+    }
+
+    .text.right {
+        .btn {
+            float:right;
+
+            @include medium {
+                float:none;
+            }
+        }
+    }
+}
